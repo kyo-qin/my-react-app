@@ -23,7 +23,7 @@ class Table extends Component {
           {list.filter(isSearched(pattern)).map(item => {
             return (
               <tr key={item.objectID} className="text-center">
-                <td>
+                <td style={{ width: "20%" }}>
                   <a href={item.url}>{item.title}</a>
                 </td>
                 <td>{item.author}</td>
