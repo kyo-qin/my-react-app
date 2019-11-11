@@ -2,12 +2,13 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 
 //传入一个参数，返回一个函数，高阶函数
+/* .filter(isSearched(pattern)) */
 const isSearched = searchTerm => item =>
   item.title.toLowerCase().includes(searchTerm.toLowerCase());
 
 class Table extends Component {
   render() {
-    const { list, pattern, onDismiss } = this.props;
+    const { list, onDismiss } = this.props;
     return (
       <table className="table table-bordered">
         <thead>
@@ -20,10 +21,11 @@ class Table extends Component {
           </tr>
         </thead>
         <tbody>
-          {list.filter(isSearched(pattern)).map(item => {
+
+          {list.map(item => {
             return (
               <tr key={item.objectID} className="text-center">
-                <td style={{ width: "20%" }}>
+                <td style={{ width: "30%" }}>
                   <a href={item.url}>{item.title}</a>
                 </td>
                 <td>{item.author}</td>
